@@ -1,6 +1,6 @@
 ## Repository for demo Submariner and RHACM
 
-All of this commands needs to be performed in the ACM Hub cluster to deploy through GitOps.
+All of this commands needs to be performed in the ACM Hub cluster to deploy through GitOps. All the resources will be created on the hub cluster, the placement rules and the labels you apply on your clusters will determine were each part of the application is deployed. The deployment is based on the next labels: app=guestbook-app, app=redis-master-app, app=redis-slave-app.
 
 * Deploy the GuestBook App in cluster Managed 1
 
