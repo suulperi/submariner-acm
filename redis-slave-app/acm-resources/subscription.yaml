@@ -5,7 +5,7 @@ metadata:
   namespace: guestbook
   name: redis-slave-app-subscription-1
   annotations:
-    apps.open-cluster-management.io/git-branch: main
+    apps.open-cluster-management.io/git-branch: master
     apps.open-cluster-management.io/git-path: redis-slave-app/redis-slave
   labels:
     app: redis-slave-app
