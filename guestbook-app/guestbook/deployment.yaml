@@ -1,14 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
-  namespace: guestbook
+  name: guestbook
 spec:
   selector:
     matchLabels:
       app: guestbook
       tier: frontend
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
       - name: php-redis
-        image: gcr.io/google-samples/gb-frontend:v5
+        image: gcr.io/google_samples/gb-frontend:v5
         resources:
           requests:
             cpu: 100m
@@ -25,9 +24,9 @@ spec:
         env:
         - name: GET_HOSTS_FROM
           value: env
-        - name: REDIS_MASTER_SERVICE_HOST
-          value: redis-master.guestbook.svc.clusterset.local
-        - name: REDIS_SLAVE_SERVICE_HOST
-          value: redis-slave.guestbook.svc.clusterset.local
+        - name: REDIS_LEADER_SERVICE_HOST
+          value: redis-leader.guestbook.svc.clusterset.local
+        - name: REDIS_FOLLOWER_SERVICE_HOST
+          value: redis-follower.guestbook.svc.clusterset.local
         ports:
         - containerPort: 80

@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-master
+  name: redis-leader
   namespace: guestbook
 spec:
   selector:
     matchLabels:
       app: redis
-      role: master
+      role: leader
       tier: backend
   replicas: 1
   template:
     metadata:
       labels:
         app: redis
-        role: master
+        role: leader
         tier: backend
     spec:
       containers:
-      - name: master
-        image: k8s.gcr.io/redis:e2e
+      - name: leader
+        image: docker.io/redis:6.0.5
         resources:
           requests:
             cpu: 100m
