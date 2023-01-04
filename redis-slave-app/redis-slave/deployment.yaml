@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: secondary
-        image: gcr.io/google_samples/gb-redis-follower:v2
+        image: quay.io/tsohlber/redis-follower:latest
         resources:
           requests:
             cpu: 100m

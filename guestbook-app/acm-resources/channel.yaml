@@ -6,4 +6,4 @@ metadata:
   namespace: guestbook
 spec:
   type: GitHub
-  pathname: https://github.com/supernoodz/submariner-acm.git
+  pathname: https://github.com/suulperi/submariner-acm.git
