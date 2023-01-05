@@ -31,3 +31,10 @@ spec:
           value: redis-leader.guestbook.svc.clusterset.local
         ports:
         - containerPort: 6379
+        volumeMounts:
+        - name: redis-follower-data
+          mountPath: /data
+      volumes: 
+      - name: redis-follower-data
+        persistentVolumeClaim:
+          claimName: redis-follower-pvc
